@@ -17,11 +17,16 @@ import puckEvents from "@/data/events";
 
 const RinkVisualizer = () => {
   const scale = 6;
-  const xPx = (x: number) => (x / 100) * 300;
-  const yPx = (y: number) => (y / 100) * 270; // stops just above goal line
+  const xPx = (x: number) => (x / 100) * 485;
+  const yPx = (y: number) => (y / 100) * 486; // stops just above goal line
+
+  // blue line y-axis: 140
+  // right faceoff dot: [355, 323]
+  // left faceoff dot: [129, 323]
+  // goal line y-axis: 418
 
   return (
-    <svg width={507} height={501} style={{ border: "1px solid #ccc" }}>
+    <svg width={485} height={486} style={{ border: "1px solid #ccc" }}>
       <image href="/rink.png" x="0" y="0" width="507" height="501" />
 
       {puckEvents.map((e: PuckEvent) => (
